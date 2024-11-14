@@ -1,33 +1,37 @@
 
-let InputArray;
+let InputArray = [];
+
+const pElem = document.createElement('p');
+document.getElementById('rawInputs').appendChild(pElem);
 
 const addName = (event) => {
     event.preventDefault()
 
     const userInp = document.getElementById('userInput').value;
-    const rawInp = document.getElementById('rawInputs');
-    const pElem = document.createElement('p');
 
-    InputArray = ['ariel', 'joe'];
-    InputArray.push(userInp);
-    console.log(InputArray);
+    if (!userInp) {
+        alert('please enter a name!');
+    }
+    else {
+        InputArray.push(userInp);
+        console.log(InputArray);
+    }
 
-    pElem.textContent =  InputArray.toString().replaceAll(',', ', ');
 
-    rawInp.appendChild(pElem);
+
+    pElem.textContent =  InputArray.join(', ');
 
     document.getElementById('userInput').value = '';
    
 }
 
 
-
-function randomizer(InputArray){
+const randomizer = InputArray => {
     const finalOutp = document.getElementById('finalOutput');
     const outp = document.createElement('p');
     const randomizer = document.getElementById('shuffler');
 
-    InputArray.sort(function (){
+    InputArray.sort(() => {
         return Math.random() - 0.5;
     });
     console.log(InputArray);
@@ -35,8 +39,48 @@ function randomizer(InputArray){
     outp.textContent =  InputArray.toString().replaceAll(',', ', ');
     finalOutp.appendChild(outp);
 
-    document.getElementById('finalOutput').value = '';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const shuffle = () => {
 
