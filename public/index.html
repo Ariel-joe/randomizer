@@ -10,23 +10,15 @@
     <div class="flex flex-col items-center justify-center mt-8">
         <h1 class="text-blue-800 text-2xl font-semibold mb-4">Randomizer App</h1>
 
-        <div class="flex flex-row items-center justify-center text-xl gap-4 mb-4">
-            <p>joe</p>
-            <p>joe</p>
-            <p>joe</p>
-        </div>
+        <div id="rawInputs" class="flex flex-row items-center justify-center text-xl gap-4 mb-4"></div>
 
-        <div class="flex flex-row items-center justify-center text-blue-600  text-xl gap-4 mb-4">
-            <p>joe</p>
-            <p>joe</p>
-            <p>joe</p>
-        </div>
+        <div id="finalOutput" class="flex flex-row items-center justify-center text-blue-600  text-xl gap-4 mb-4"></div>
 
         <div class="flex flex-col items-center justify-center">
-            <input type="text" placeholder="enter names here" class="border min-w-full px-6 py-3 border-gray-500 mb-4">
+            <input id="userInput" type="text" placeholder="enter names here" class="border min-w-full px-6 py-3 border-gray-500 mb-4">
             <div class="flex flex-row gap-8">
-                <button class="bg-black px-6 py-3 text-white font-semibold">Submit</button>
-                <button class=" border border-black px-6 py-3 font-semibold">Randomize</button>
+                <button id="submitBtn" class="bg-black px-6 py-3 text-white font-semibold" onclick="addName(event)">Submit</button>
+                <button id="shuffler" class=" border border-black px-6 py-3 font-semibold" onclick="randomizer(InputArray)">Randomize</button>
             </div>
         </div>
     </div>
