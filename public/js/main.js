@@ -27,7 +27,7 @@ const addName = (event) => {
 const randomizer = InputArray => {
     const finalOutp = document.getElementById('finalOutput');
     const outp = document.createElement('p');
-
+    
     InputArray.sort(() => {
         return Math.random() - 0.5;
     });
