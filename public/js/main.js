@@ -4,7 +4,7 @@ let InputArray = [];
 const pElem = document.createElement('p');
 document.getElementById('rawInputs').appendChild(pElem);
 
-const addName = (event) => {
+const addName = event => {
     event.preventDefault()
 
     const userInp = document.getElementById('userInput').value;
