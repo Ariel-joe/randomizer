@@ -41,6 +41,34 @@ const randomizer = InputArray => {
 
 
 
+// modal testing
+    // JavaScript to control the modal
+    const modal = document.getElementById('myModal');
+    const openModalButton = document.getElementById('openModal');
+    const closeModalButtons = document.querySelectorAll('#closeModal, #closeModalBottom');
+
+    // Open modal
+    openModalButton.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+    });
+
+    // Close modal
+    closeModalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.classList.add('hidden');
+      }
+    });
+
+
+
+
 
 
 

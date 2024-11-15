@@ -12,18 +12,41 @@
 
         <div id="rawInputs" class="flex flex-row items-center justify-center text-2xl gap-4 mb-4"></div>
 
-        <div id="finalOutput" class="flex flex-row items-center justify-center text-blue-600  text-2xl gap-4 mb-4"></div>
-
         <div class="flex flex-col items-center justify-center">
             <input id="userInput" type="text" placeholder="enter names here" class="border min-w-full px-6 py-3 border-gray-500 mb-4">
             <div class="flex flex-row gap-8">
                 <button class="bg-black px-6 py-3 text-white text-xl font-semibold" onclick="addName(event)">Submit</button>
-                <button class=" border border-black px-6 py-3 text-xl font-semibold" onclick="randomizer(InputArray)">Randomize</button>
+                <button id="openModal" class=" border border-black px-6 py-3 text-xl font-semibold" onclick="randomizer(InputArray)">Randomize</button>
             </div>
         </div>
+
+
+
+         <!-- modals testing -->
+    <div id="myModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">This is the random list</h2>
+            <button id="closeModal" class="text-gray-500 hover:text-gray-700">&times;</button>
+          </div>
+
+          <!-- where the random list goes -->
+          <div id="finalOutput" class="flex flex-row items-center justify-center text-blue-600  text-2xl gap-4 mb-4"></div>
+
+          <button id="closeModalBottom" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
+            Close
+          </button>
+        </div>
+      </div>
+
+
+
+
+
     </div>
 
 
+   
     
 
 
