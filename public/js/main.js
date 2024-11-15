@@ -25,6 +25,7 @@ const addName = event => {
 
 
 const randomizer = InputArray => {
+
     const finalOutp = document.getElementById('finalOutput');
     const outp = document.createElement('p');
     
@@ -36,6 +37,21 @@ const randomizer = InputArray => {
     outp.textContent =  InputArray.toString().replaceAll(',', ', ');
     finalOutp.appendChild(outp);
 
+}
+
+const addToHistory = () => {
+    
+    const OutputToHistory = document.getElementById('finalOutput').value;
+    const histoP = document.createElement('p');
+    const historyContainer = document.getElementById('History-container');
+
+    histoP.textContent = OutputToHistory;
+    console.log(histoP);
+
+    historyContainer.appendChild(histoP);
+
+    document.getElementById('finalOutput').value = '';
+    
 }
 
 
