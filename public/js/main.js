@@ -58,10 +58,9 @@ const addToHistory = () => {
 
 
 // modal testing
-    // JavaScript to control the modal
     const modal = document.getElementById('myModal');
     const openModalButton = document.getElementById('openModal');
-    const closeModalButtons = document.querySelectorAll('#closeModal, #closeModalBottom');
+    const closeModalButtons = document.querySelectorAll('#closeModalsign, #closeModalBtn');
 
     // Open modal
     openModalButton.addEventListener('click', () => {
@@ -75,12 +74,6 @@ const addToHistory = () => {
       });
     });
 
-    // Close modal when clicking outside the modal content
-    window.addEventListener('click', (event) => {
-      if (event.target === modal) {
-        modal.classList.add('hidden');
-      }
-    });
 
 
 
