@@ -27,56 +27,65 @@ const addName = event => {
 const randomizer = InputArray => {
 
     const finalOutp = document.getElementById('finalOutput');
-    const outp = document.createElement('p');
+    const outpara = document.createElement('p');
+    const timeNow = new Date()
+
+
     
     InputArray.sort(() => {
         return Math.random() - 0.5;
     });
     console.log(InputArray);
 
-    outp.textContent =  InputArray.toString().replaceAll(',', ', ');
-    finalOutp.appendChild(outp);
+    outpara.textContent =  InputArray.join(', ');
+    finalOutp.appendChild(outpara);
 
+    let history = JSON.parse(localStorage.getItem('history')) || [];
+    history.push(InputArray);
+    localStorage.setItem('history', JSON.stringify(history));
 }
 
-const addToHistory = () => {
-    
-    const OutputToHistory = document.getElementById('finalOutput').value;
-    const histoP = document.createElement('p');
+const viewHistory = () => {
     const historyContainer = document.getElementById('History-container');
+    historyContainer.innerHTML = '';
 
-    histoP.textContent = OutputToHistory;
-    console.log(histoP);
+    const history = JSON.parse(localStorage.getItem('history')) || [];
 
-    historyContainer.appendChild(histoP);
-
-    document.getElementById('finalOutput').value = '';
-    
-}
-
-
-
-
-// modal testing
-    const modal = document.getElementById('myModal');
-    const openModalButton = document.getElementById('openModal');
-    const closeModalButtons = document.querySelectorAll('#closeModalsign, #closeModalBtn');
-
-    // Open modal
-    openModalButton.addEventListener('click', () => {
-      modal.classList.remove('hidden');
+    history.forEach((item) => {
+        const histoP = document.createElement('p');
+        histoP.textContent = item.join(', ');
+        historyContainer.appendChild(histoP);
     });
+};
 
-    // Close modal
-    closeModalButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        modal.classList.add('hidden');
-      });
+
+
+
+const openModal = () => {
+    const historyModal = document.getElementById('historyModal');
+    historyModal.classList.remove('hidden');
+
+    const historyContainer = document.getElementById('History-container');
+    historyContainer.innerHTML = ''; 
+    const history = JSON.parse(localStorage.getItem('history')) || [];
+    history.forEach((item) => {
+        const histoP = document.createElement('p');
+        histoP.textContent = item.join(', '); 
+        historyContainer.appendChild(histoP);
     });
+};
 
+const closeModal = () => {
+    const historyModal = document.getElementById('historyModal');
+    historyModal.classList.add('hidden'); 
+};
 
 
+const now = new Date();
+const hr = now.getHours();
+const min = now.getMinutes();
 
+console.log(`${hr}:${min}`);
 
 
 
@@ -114,73 +123,3 @@ const addToHistory = () => {
 
 
 
-
-
-// const shuffle = () => {
-
-
-//     randomizer.addEventListener('click', () => {
-//         InputArray.sort(function (){
-//             return Math.random() - 0.5;
-//         });
-        
-//         console.log(InputArray);
-//     })
-
-
-// }
-
-
-//      InputArray.sort(function () {
-//         return Math.random() - 0.5;
-//     });
-
-//      outp.textContent = InputArray;
-
-//     finalOutp.appendChild(outp);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function randomizer(arr){
-//     arr.sort(function (){
-//         return Math.random() - 0.5;
-//     });
-
-// }
-
-// const names = ['joe', 'alois', 'ben', 'stan', 'aron', 'marc', 'michael'];
-// console.log(names)
-
-// console.log(randomizer(names));
-
-
-
-
-
-  
